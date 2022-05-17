@@ -1,16 +1,18 @@
+---
 version: 2.1
 
 # This code is licensed from CircleCI to the user under the MIT license.
 # See here for details: https://circleci.com/developer/orbs/licensing
 
 description: >
-  This Orb reports the status of deployments in CircleCI Projects to your Compass instance.
+  This Orb reports the status of deployments in CircleCI Projects
+  to your Compass instance.
   Requires that CircleCI for Compass be installed in the Compass instance.
 
 # This information will be displayed in the orb registry and is not mandatory.
 display:
-  home_url: "https://developers.atlassian.com"
-  source_url: "https://github.com/atlassian-labs/Compass-Orb"
+  home_url: "https://developer.atlassian.com"
+  source_url: "https://developer.atlassian.com"
 
 orbs:
-    jq: circleci/jq@2.2
+  jq: circleci/jq@2.2
