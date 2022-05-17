@@ -1,0 +1,58 @@
+---
+description: |
+  Report builds or deployments to Compass based on job type.
+
+parameters:
+  environment:
+    default: ${CIRCLE_JOB}
+    description: |
+      For deployments. Indicates the name of target environment.
+      Default is the CircleCI Job Name.
+    type: string
+  environment_type:
+    default: development
+    description: |
+      Indicates the category of target environment
+      as defined by Atlassian
+    enum:
+      - production
+      - staging
+      - testing
+      - development
+      - unmapped
+    type: enum
+  state_path:
+    default: ./circleci-orb-compass.status
+    description: |
+      Relative or absolute path to a store
+      build state for orb.
+    type: string
+  token_name:
+    default: CIRCLE_TOKEN
+    description: |
+      The name of environment variable containing
+      CircleCI API Token. Required for all projects.
+    type: string
+steps:
+  - jq/install:
+      when: always
+  - run:
+      name: COMPASS - Setting Failure Condition
+      environment:
+        STATE_PATH: <<parameters.state_path>>
+      command: <<include(scripts/build_fail.sh)>>
+      when: on_fail
+  - run:
+      name: COMPASS - Setting Success Condition
+      environment:
+        STATE_PATH: <<parameters.state_path>>
+      command: <<include(scripts/build_success.sh)>>
+      when: on_success
+  - run:
+      name: Update status in Atlassian Compass
+      environment:
+        TOKEN_NAME: <<parameters.token_name>>
+        STATE_PATH: <<parameters.state_path>>
+        ENVIRONMENT_TYPE: <<parameters.environment_type>>
+      command: <<include(scripts/notify_deployment.sh)>>
+      when: always
