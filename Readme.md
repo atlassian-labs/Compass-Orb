@@ -14,7 +14,7 @@ Contributions to Compass Orb are welcome! Please see [CONTRIBUTING.md](CONTRIBUT
 
 ## License
 
-Copyright (c) 2022 - 2022 Atlassian and others.
+Copyright (c) 2022 Atlassian and others.
 Apache 2.0 licensed, see [LICENSE](LICENSE) file.
 
 <br/>
