@@ -13,6 +13,8 @@ usage:
         - run: echo "hello"
   workflows:
     deploy:
+      context:
+        - compass-integration-<compass-site-name>
       jobs:
         - deploy:
             post-steps:
