@@ -6,7 +6,7 @@ An orb for reporting the status of CircleCI builds and deployments to Atlassian 
 
 ## Usage
 
-For full usage guidelines, see the [Intregrate Compass with CircleCI guide](https://developer.atlassian.com/cloud/compass/integrations/integrate-Compass-with-CircleCI/).
+For full usage guidelines, see the [Intregrate Compass with CircleCI guide](https://go.atlassian.com/compass-circleci-integration).
 
 ## Contributions
 
