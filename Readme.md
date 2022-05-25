@@ -1,12 +1,12 @@
 # Compass Orb
 
-[![CircleCI Build Status](https://circleci.com/gh/atlassian-labs/Compass-Orb.svg?style=shield 'CircleCI Build Status')](https://circleci.com/gh/atlassian-labs/Compass-Orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/atlassian/compass.svg)](https://circleci.com/orbs/registry/orb/atlassian/compass) [![Atlassian license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
+[![CircleCI Build Status](https://circleci.com/gh/atlassian-labs/Compass-Orb.svg?style=shield 'CircleCI Build Status')](https://circleci.com/gh/atlassian-labs/Compass-Orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/atlassian-labs/compass.svg)](https://circleci.com/orbs/registry/orb/atlassian/compass) [![Atlassian license](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 
 An orb for reporting the status of CircleCI builds and deployments to Atlassian Compass
 
 ## Usage
 
-For full usage guidelines, see the [orb registry listing](http://circleci.com/orbs/registry/orb/atlassian/compass).
+For full usage guidelines, see the [Intregrate Compass with CircleCI guide](https://developer.atlassian.com/cloud/compass/integrations/integrate-Compass-with-CircleCI/).
 
 ## Contributions
 

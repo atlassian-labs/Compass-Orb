@@ -4,17 +4,16 @@ description: |
 usage:
   version: 2.1
   orbs:
-    <orb>: <namespace>/<orb>@x.y
+    compass: atlassian-labs/compass@x.y.z
   jobs:
     deploy:
       docker:
-        - image: 'circleci/node:10'
+        - image: cimg/base:2021.04
       steps:
         - run: echo "hello"
-orbs:
   workflows:
     deploy:
       jobs:
         - deploy:
-          post-steps:
-            - compass/notify_deployment
+            post-steps:
+              - compass/notify_deployment
