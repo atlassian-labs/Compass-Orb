@@ -15,5 +15,7 @@ usage:
     deploy:
       jobs:
         - deploy:
+            context:
+              - compass-integration-<compass-site-name>
             post-steps:
               - compass/notify_deployment
