@@ -44,10 +44,9 @@ generate_json_payload_deployment () {
 
 
 post_to_compass () {
-  TOKEN=$(eval echo "\$${TOKEN_NAME}") #TOKEN_NAME is just name, so we need to eval it as var.
   cat /tmp/compass-status.json
   HTTP_STATUS=$(curl \
-  -u "${TOKEN}:" \
+  -u "${!TOKEN_NAME}:" \
   -s -w "%{http_code}" -o /tmp/curl_response.txt \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
