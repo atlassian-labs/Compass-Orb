@@ -32,7 +32,7 @@ parameters:
     description: |
       The name of environment variable containing
       CircleCI API Token. Required for all projects.
-    type: string
+    type: env_var_name
 steps:
   - jq/install:
       when: always
