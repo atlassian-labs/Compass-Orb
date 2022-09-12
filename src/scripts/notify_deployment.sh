@@ -6,7 +6,7 @@ run () {
 
 verify_env_variables () {
   if [[ ! ${COMPASS_SHARED_SECRET} || ! ${COMPASS_WEBTRIGGER} ]]; then
-    "The environment variables required for the Compass orb aren’t configured. Please check if you’ve configured the integration correctly in the Compass UI."
+    echo "The environment variables required for the Compass orb aren’t configured. Please check if you’ve configured the integration correctly in the Compass UI."
     exit 0
   fi
 }
