@@ -45,8 +45,9 @@ generate_json_payload_deployment () {
 
 post_to_compass () {
   cat /tmp/compass-status.json
+  eval TOKEN=\$$TOKEN_NAME #most portable way to use dynamic variable name
   HTTP_STATUS=$(curl \
-  -u "${!TOKEN_NAME}:" \
+  -u "${TOKEN}:" \
   -s -w "%{http_code}" -o /tmp/curl_response.txt \
   -H "Content-Type: application/json" \
   -H "Accept: application/json" \
