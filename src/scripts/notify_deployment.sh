@@ -17,6 +17,7 @@ generate_json_payload_deployment () {
   --arg time_str "$(date +%s)" \
   --arg lastUpdated "${iso_time}" \
   --arg category "${ENVIRONMENT_TYPE^^}" \
+  --arg environmentName "${ENVIRONMENT_NAME}" \
   --arg environmentType "${ENVIRONMENT_TYPE}" \
   --arg workflowId "${CIRCLE_WORKFLOW_ID}" \
   --arg jobId "${CIRCLE_BUILD_NUM}" \
@@ -32,7 +33,7 @@ generate_json_payload_deployment () {
       {
           "environment": {
             "category": $category,
-            "displayName": $environmentType,
+            "displayName": $environmentName,
             "environmentId": $environmentType
           },
         "lastUpdated": $lastUpdated

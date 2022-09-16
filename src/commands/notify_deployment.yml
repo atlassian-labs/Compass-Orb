@@ -4,7 +4,7 @@ description: |
 
 parameters:
   environment:
-    default: ${CIRCLE_JOB}
+    default: "${CIRCLE_JOB}"
     description: |
       For deployments. Indicates the name of target environment.
       Default is the CircleCI Job Name.
@@ -48,6 +48,16 @@ steps:
         STATE_PATH: <<parameters.state_path>>
       command: <<include(scripts/build_success.sh)>>
       when: on_success
+  - run:
+      name: COMPASS - Set Environment Name
+      # `environment` is by default a variable name `${CIRCLE_JOB}`
+      # but unlike parameters, variables are not interpolated in config.yml 
+      # they must evaluate inside the container as part of a step
+      command: |
+        echo 'export ENVIRONMENT_NAME="<<parameters.environment>>"' >> $BASH_ENV
+        source $BASH_ENV
+        echo "Using displayName: $ENVIRONMENT_NAME"
+      when: always
   - run:
       name: Update status in Atlassian Compass
       environment:
