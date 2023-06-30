@@ -51,7 +51,7 @@ steps:
   - run:
       name: COMPASS - Set Environment Name
       # `environment` is by default a variable name `${CIRCLE_JOB}`
-      # but unlike parameters, variables are not interpolated in config.yml 
+      # but unlike parameters, variables are not interpolated in config.yml
       # they must evaluate inside the container as part of a step
       command: |
         echo 'export ENVIRONMENT_NAME="<<parameters.environment>>"' >> $BASH_ENV
