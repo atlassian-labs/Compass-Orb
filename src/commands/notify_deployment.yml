@@ -35,6 +35,7 @@ parameters:
     type: env_var_name
 steps:
   - jq/install:
+      name: Install jq
       when: always
   - run:
       name: COMPASS - Setting Failure Condition
