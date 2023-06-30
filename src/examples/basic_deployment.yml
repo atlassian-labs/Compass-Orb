@@ -10,7 +10,9 @@ usage:
       docker:
         - image: cimg/base:2021.04
       steps:
-        - run: echo "hello"
+        - run:
+           name: Report deployments
+           command: echo "hello"
   workflows:
     deploy:
       jobs:
