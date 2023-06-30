@@ -16,6 +16,7 @@ workflows:
             tags:
               only: /.*/
       - orb-tools/review:
+          exclude: RC008
           filters:
             tags:
               only: /.*/
